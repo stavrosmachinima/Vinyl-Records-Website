@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Led Zeppelin wiki</title>
+    <link rel="shortcut icon" type="image/jpeg" href="images/favicon.jpeg">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="description" content="The story of Led Zeppelin">
+    <script type="text/javascript">
+    function getValue(){
+      var username=window.location.href;
+      var split=username.split("?")[1];
+      document.getElementById('username').value=split;
+      if (username.split("?").length>2)
+      {
+        let album=username.split("?")[2].replace('%20',' ');
+        let band=username.split("?")[3].replace('%20',' ');
+        let price=username.split("?")[4];
+        alert('Album:'+album+'\nBand:'+band+'\nPrice:'+price);
+      }
+
+    }
+
+      function haveYouSignedIn(){
+        var usernameAgain=document.getElementById('username').value;
+        if (usernameAgain!='undefined'){
+          return true;
+        }
+        alert('You are not signed in.')
+        return false;
+      }
+    </script>
+  </head>
+  <style media="screen">
+
+  body{
+    background-image: url("images/led.jpeg");
+   background-size: auto;
+   background-position: center;
+  }
+
+  .flex-container{
+    display: flex;
+    flex-wrap:nowrap;
+    width:100%;
+  }
+
+  a{
+    flex-grow: 1;
+  }
+  button{
+    width:100%;
+    font-size: 24px;
+    background-color:orange;
+    border: 1px solid black;
+  }
+  p{
+    font-size:1.4em;
+    color:black;
+  }
+
+  button:hover {
+    background-color: #FF2A00;
+    cursor: pointer;
+  }
+
+a{
+  color:black;
+}
+
+a:active{
+  color:red;
+}
+a:visited{
+  color:yellow;
+}
+li{
+  font-size: 18px;
+}
+
+#favorite{
+  width:7%;
+}
+
+#favorite:hover{
+  cursor: pointer;
+  background-color:red;
+}
+  </style>
+  <body onload="getValue();">
+    <h2 style="color:black;font-size:40px;text-align:center;">Quick History</h2>
+    <div class="flex-container">
+      <a href='' onclick="this.href='diskopoleio.html?'+document.getElementById('username').value"><button><strong>Home</strong></button></a>
+      <a href='' onclick="this.href='login_register.html?'+document.getElementById('username').value"><button><strong>Register and Login</strong></button></a>
+    <a href='' onclick="this.href='the_queen.html?'+document.getElementById('username').value"><button><strong>The Queen</strong></button></a>
+    <a href='' onclick="this.href='pink_floyd.html?'+document.getElementById('username').value"><button><strong>Pink Floyd</strong></button></a>
+    <a href='' onclick="this.href='led_zeppelin.html?'+document.getElementById('username').value"><button><strong>Led Zeppelin</strong></button></a>
+    <a href='' onclick="this.href='contact.html?'+document.getElementById('username').value"><button><strong>Contact</strong></button></a>
+    </div>
+    <div>
+      <p>Led Zeppelin formed as a ‘supergroup’ in 1968, set up by former Yardbirds guitarist Jimmy Page. They were originally going to be called The New Yardbirds until The Who‘s drummer Keith Moon remarked they would go down like a “lead zeppelin”.
+
+The band’s first four albums – ‘Led Zeppelin’, ‘Led Zeppelin II’, ‘Led Zeppelin III’ and ‘IV (Four Symbols)’ – are all seen as rock classics, mixing blues, folk and eastern influences and making them increasingly huge, especially in the US and the UK. The band and their manager, Peter Grant, maintained an aggressive pro-album stance — though some singles were released without their consent.
+As well as their music, the band became notorious for their offstage excesses, as noted in Steven Davis’ unauthorised autobiography ‘Hammer Of The Gods’. As well as all the usual stuff, such as drug use and TVs being thrown out of windows, there were darker episodes, such the infamous ‘shark incident’, explained further here.
+</p>
+<p>
+
+Between 1971 and 1975 Led Zeppelin could justifiably claim to be the biggest band in the world, and the world’s premiere live draw. Further albums – ‘Houses Of The Holy’ and the double ‘Physical Graffiti’ (widely thought to be their best) cemented their success.
+
+Between 1976 and 1980, things got darker for the Zep. Although albums such as ‘Presence’ and ‘In through The Out Door’ still sold shedloads, Robert Plant was seriously injured in a car crash, and infant son Kai died of a chest infection. Jimmy Page was dabbling with heroin, and John Bonham was an alcoholic. The end came in September 1980, when Bonham died at Page‘s house aged 32 after choking on his own vomit following a drink binge.
+</p>
+    </div>
+    <div class="flex-container">
+      <div>
+      <figure>
+      <img src="./images/mothership.jpeg" alt="Mothership Album Image" style="width:70%;height:85%">
+      <figcaption>
+        <a href="./images/mothership.jpeg" style="font-size:20px;">Led Zeppelin</a>
+        <form action="php/saveInDb2.php" method="post">
+          <input type="text" class="username" id="username" name="username" placeholder="Your username" style="vertical-align:top;margin-top:10px;" readonly>
+          <input type="image" src="./images/favorites.png" id="favorite" name="favorite" alt="Add to your favorites icon" onclick="return haveYouSignedIn();">
+          <input id="album" name="album" style="color:white" value="Mothership" hidden>
+          <input id="band" name="band" value="Led Zeppelin" hidden>
+          <input id="price" name="price" value="55" hidden>
+        </form>
+      </figcaption>
+      </figure>
+      </div>
+      <div>
+        <ol>
+          <h2 style="text-align:left;">Album</h2>
+          <li>Good Times Bad Times</li>
+          <li>Communication Breakdown</li>
+          <li>Dazed and Confused</li>
+          <li>Babe I'm Gonna Leave You</li>
+          <li>Whole Lotta Love</li>
+          <li>Ramble On</li>
+          <li>Heartbreaker</li>
+          <li>Immigrant Song</li>
+          <li>Since I've Been Loving You</li>
+          <li>Rock and Roll</li>
+          <li>Black Dog</li>
+          <li>When the Levee Breaks</li>
+          <li>Stairway to Heaven</li>
+          <li>The Song Remains the Same</li>
+          <li>Over the Hills and Far Away</li>
+          <li>D'yer Mak'er</li>
+          <li>No Quarter</li>
+          <li>Trampled Under Foot </li>
+          <li>Houses of the Holy</li>
+          <li>Kashmir</li>
+          <li>Nobody's Fault But Mine</li>
+          <li>Achilles' Last Stand</li>
+          <li>In the Evening</li>
+          <li>All My Love</li>
+          </ol>
+      </div>
+    </div>
+  </body>
+</html>

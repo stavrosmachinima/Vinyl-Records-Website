@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Pink Floyd wiki</title>
+    <link rel="shortcut icon" type="image/jpeg" href="images/favicon.jpeg">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="description" content="The story of Pink Floyd">
+    <script type="text/javascript">
+    function getValue(){
+      var username=window.location.href;
+      var split=username.split("?")[1];
+      document.getElementById('username').value=split;
+      if (username.split("?").length>2)
+      {
+        let album=username.split("?")[2].replace('%20',' ');
+        let band=username.split("?")[3].replace('%20',' ');
+        let price=username.split("?")[4];
+        alert('Album:'+album+'\nBand:'+band+'\nPrice:'+price);
+      }
+}
+      function haveYouSignedIn(){
+        var usernameAgain=document.getElementById('username').value;
+        if (usernameAgain!='undefined'){
+          return true;
+        }
+        alert('You are not signed in.')
+        return false;
+      }
+    </script>
+    <style media="screen">
+    body{
+      background-image: url("images/theWall.jpeg");
+     background-size: auto;
+     background-position: center;
+    }
+
+    .flex-container,.flex2{
+      display: flex;
+      flex-wrap:nowrap;
+      width:100%;
+    }
+    a,.flex2 div{
+      flex-grow: 1;
+    }
+
+    button{
+      width:100%;
+      font-size: 24px;
+      background-color:white;
+      border: 1px solid black;
+    }
+
+    button:hover {
+      background-color: #FF2A00;
+      cursor: pointer;
+    }
+    h1{
+      text-align: center;
+      font-size: 44px;
+    }
+
+    h2{
+      text-align: center;
+    }
+
+    p{
+      font-size:2em;
+      color:#7B7B7B;
+    }
+    u{
+      text-decoration: none;
+      border-bottom: 3px solid black;
+    }
+    li{
+      font-size: 18px;
+    }
+
+    #favorite{
+      width:7%;
+    }
+
+    #favorite:hover{
+      cursor: pointer;
+      background-color:red;
+    }
+    </style>
+  </head>
+  <body onload="getValue();">
+    <h1><u>Welcome!</u></h1>
+    <div class="flex-container">
+      <a href='' onclick="this.href='diskopoleio.html?'+document.getElementById('username').value"><button><strong>Home</strong></button></a>
+      <a href='' onclick="this.href='login_register.html?'+document.getElementById('username').value"><button><strong>Register and Login</strong></button></a>
+    <a href='' onclick="this.href='the_queen.html?'+document.getElementById('username').value"><button><strong>The Queen</strong></button></a>
+    <a href='' onclick="this.href='pink_floyd.html?'+document.getElementById('username').value"><button><strong>Pink Floyd</strong></button></a>
+    <a href='' onclick="this.href='led_zeppelin.html?'+document.getElementById('username').value"><button><strong>Led Zeppelin</strong></button></a>
+    <a href='' onclick="this.href='contact.html?'+document.getElementById('username').value"><button><strong>Contact</strong></button></a>
+    </div>
+    <div class="flex2">
+      <div>
+        <figure>
+        <img src="./images/shout.jpeg" alt="The Wall Image" style="width:60%;height:85%">
+        <figcaption>
+          <a href="./images/shout.jpeg">Pink Floyd</a>
+          <form action="php/saveInDb2.php" method="post">
+            <input type="text" class="username" id="username" name="username" placeholder="Your username" style="vertical-align:top;margin-top:10px;" readonly>
+            <input type="image" src="./images/favorites.png" id="favorite" name="favorite" alt="Add to your favorites icon" onclick="return haveYouSignedIn();">
+            <input id="album" name="album" style="color:white" value="The Wall" hidden>
+            <input id="band" name="band" value="Pink Floyd" hidden>
+            <input id="price" name="price" value="50" hidden>
+          </form>
+        </figcaption>
+        </figure>
+      </div>
+      <div>
+        <ol>
+          <h2 style="text-align:left;">Album</h2>
+          <li>In the Flesh?</li>
+          <li>The Thin Ice</li>
+          <li>
+        Another Brick in the Wall, Pt.1</li>
+          <li>
+        The Happiest Days of Our Lives</li>
+          <li>
+        Another Brick in the Wall, Pt. 2</li>
+          <li>Mother</li>
+          <li>Goodbye Blue Sky</li>
+          <li>Empty Spaces</li>
+          <li>Young Lust</li>
+          <li>One of My Turns</li>
+          <li>Don't Leave Me Now</li>
+          <li>Another Brick in the Wall, Pt.3</li>
+          <li>Goodbye Cruel World</li>
+          <li>Hey you</li>
+          <li>Is There Anybody Out There?</li>
+          <li>Nobody Home</li>
+          <li>Vera</li>
+          <li>Bring the Boys Back Home</li>
+          <li>Comfortably Numb</li>
+          <li>The Show Must Go On</li>
+          <li>In the Flesh (Part II)</li>
+          <li>Run Like Hell</li>
+          <li>Waiting for the Worms</li>
+          <li>Stop</li>
+          <li>The Trial </li>
+          <li>Outside the Wall</li>
+          </ol>
+      </div>
+    </div>
+    <div>
+      <h2 style="color:#8B6060;font-size:40px;">Quick History</h2>
+      <p>The band that eventually became known as Pink Floyd started by performing covers of American R&B songs. When Syd Barrett joined the group in 1965 he began writing most of the band's songs and moved the group into the burgeoning psychedelic rock movement. Surreal lyrics and experimental electronic effects established the band as the British epicenter of psych rock.
+After two albums, Barrett self-destructed due to mental instability aggravated by drug use. He was replaced by David Gilmour in 1968. The band continued to experiment, increasingly incorporating classical and jazz influences into their music.
+Their innovative musical styles and flashy stage production in live performances established them as a commercially successful band with a unique sound, at the forefront of the rock opera genre with heir 1979 epic The Wall. </p>
+    </div>
+  </body>
+</html>

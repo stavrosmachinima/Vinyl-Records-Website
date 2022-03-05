@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="gr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
+    <title>Contact Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" defer>
+      function getValue(){
+        var username=window.location.href;
+        var split=username.split("?")[1];
+        document.getElementById('username').value=split;
+      }
+
+          function makeWhite(){
+            document.getElementById('message').innerHTML=" ";
+            document.getElementById('subject').value="";
+          }
+
+function loadEvents() {
+  // kalei to onLoad sthn arxh
+ //  kai tou kanei update
+      var mailString;
+      function updateMailString() {
+          mailString = '?subject=' + encodeURIComponent($('#subject').val())
+              + '&body=' + encodeURIComponent($('#message').val());
+          $('#mail-link').attr('href',  'mailto:stpeppas41@gmail.com;nick.betinis@gmail.com' + mailString);
+      }
+      // ta parakatw einai listeners
+      $( "#subject" ).focusout(function() { updateMailString(); });
+      $( "#message" ).focusout(function() { updateMailString(); });
+      updateMailString();
+  }
+
+        function validateForm() {
+          var alertmsg1 = "You must fill the following required fields";
+          var alertmsg2 = "";
+          var k = document.getElementById('subject').value;
+          if (k === "") {
+            alertmsg2 = alertmsg2 + "\nYour Subject";
+          }
+          var l = document.getElementById('message').value;
+          if (l === "") {
+            alertmsg2 = alertmsg2 + "\nYour message";
+          }
+          if (alertmsg2 === "") {
+              return true;
+            } else {
+              alert(alertmsg1 + alertmsg2);
+              alertmsg2 = ""
+              return false;
+            }
+          }
+
+    </script>
+    <style media="screen">
+  body{
+    background-image: url("images/contact.png");
+    background-repeat: no-repeat;
+  }
+
+  h1{
+    text-align:center;
+    font-size:40px;
+  }
+
+  label{
+    font-weight:bold;
+    font-size:24px;
+  }
+
+  h2{
+    font-size:28px;
+  }
+
+  input{
+    height:25px;
+  }
+
+  .rightTable{
+    height:200px;
+    width:300px;
+  }
+
+  fieldset{
+    border-color: #ffffff00;
+  }
+
+  button{
+    width:100%;
+    font-size: 24px;
+    background-color:white;
+    border: 1px solid black;
+  }
+  button:hover {
+    background-color: #FF2A00;
+    cursor: pointer;
+  }
+    .flex-container{
+      display: flex;
+      flex-wrap:nowrap;
+      width:100%;
+    }
+
+    a{
+      flex-grow: 1;
+    }
+
+    iframe{
+      text-align: center;
+      margin-top:1%;
+      width:50%;
+    }
+
+    p{
+      font-size:24px;
+    }
+
+    </style>
+  </head>
+  <body onload="getValue();loadEvents();">
+<h1><strong><u>Contact Page</u></strong></h1>
+<div class="flex-container">
+  <a href='' onclick="this.href='diskopoleio.html?'+document.getElementById('username').value"><button><strong>Home</strong></button></a>
+  <a href='' onclick="this.href='login_register.html?'+document.getElementById('username').value"><button><strong>Register and Login</strong></button></a>
+  <a href='' onclick="this.href='the_queen.html?'+document.getElementById('username').value"><button><strong>The Queen</strong></button></a>
+  <a href='' onclick="this.href='pink_floyd.html?'+document.getElementById('username').value"><button><strong>Pink Floyd</strong></button></a>
+  <a href='' onclick="this.href='led_zeppelin.html?'+document.getElementById('username').value"><button><strong>Led Zeppelin</strong></button></a>
+  <a href='' onclick="this.href='contact.html?'+document.getElementById('username').value"><button><strong>Contact</strong></button></a>
+  <span id="username"></span>
+</div>
+<center><p>You can find us here.</p>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d71637.04467805827!2d-53.6257246818384!3d48.14441717189562!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4b747e1c95b4a231%3A0xbfadf44ea321f21b!2sRandom%20Island!5e0!3m2!1sen!2sgr!4v1629965228625!5m2!1sen!2sgr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  <p>Or send us an email.</p>
+  <form style="float:right;margin-right:10%">
+  <fieldset>
+    <table>
+      <tr>
+        <td><label for="subject">Subject*</label></td>
+        <td><p><input id="subject" type="text" value="Business Opportunity"  class="form-control"></p></td>
+      </tr>
+      <tr>
+        <td><label for="message">Your message*</label></td>
+        <td><p><textarea id="message" type="text" class="form-control" cols=30>I am X and i would like you to communicate with me for a business opportunity etc.</textarea></p></td>
+      </tr>
+    </table>
+  </fieldset>
+  <fieldset style="border: none">
+  <table>
+    <tr>
+      <td><p><a id="mail-link" class="btn btn-primary" onclick="return validateForm();">Submit</a></p></td>
+      <td><p><a class="btn btn-primary" onclick="makeWhite();" style="margin-left:10%;">Reset</a></p></td>
+    </tr>
+  </table>
+    </fieldset>
+    </form>
+    <table style="float:left;">
+      <h3>Betinis Nikolaos - Stavros Peppas</h3>
+      <ul style="list-style-type: none">
+      <li>Mobiles : <a href="tel:+306974252899">6974252899</a><br><a href="tel:+3069722356">6977245348</a>
+      <li>E-mails : <a href="mailto:nick.betinis@gmail.com">nick.betinis@gmail.com </a><br><a href="mailto:stpeppas41@gmail.com">stpeppas41@gmail.com</a></li>
+      </ul>
+    </table>
+</center>
+  </body>
+</html>
